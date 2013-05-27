@@ -1,4 +1,37 @@
-sorting
-=======
-
-Sorting Routines Implemented in Go
+PASS
+BenchmarkBubbleSort_10e1	 1000000	      2000 ns/op
+BenchmarkBubbleSort_10e2	   10000	    106412 ns/op
+BenchmarkBubbleSort_10e3	     100	  11911789 ns/op
+BenchmarkBubbleSort_10e4	       1	1193727364 ns/op
+BenchmarkBubbleSort_10e5	       1	124356555864 ns/op
+BenchmarkHeapSort_10e1	 1000000	      2345 ns/op
+BenchmarkHeapSort_10e2	   50000	     32729 ns/op
+BenchmarkHeapSort_10e3	    5000	    457096 ns/op
+BenchmarkHeapSort_10e4	     500	   5868900 ns/op
+BenchmarkHeapSort_10e5	      20	  77549394 ns/op
+BenchmarkInsertionSort_10e1	 1000000	      1690 ns/op
+BenchmarkInsertionSort_10e2	   50000	     38214 ns/op
+BenchmarkInsertionSort_10e3	     500	   3407785 ns/op
+BenchmarkInsertionSort_10e4	       5	 336861501 ns/op
+BenchmarkInsertionSort_10e5	       1	34284634539 ns/op
+BenchmarkMergeSort_10e1	  200000	      9787 ns/op
+BenchmarkMergeSort_10e2	   20000	     75554 ns/op
+BenchmarkMergeSort_10e3	    2000	    924072 ns/op
+BenchmarkMergeSort_10e4	     200	   9475607 ns/op
+BenchmarkMergeSort_10e5	      20	 106211579 ns/op
+BenchmarkQuickSort_10e1	  500000	      3483 ns/op
+BenchmarkQuickSort_10e2	   50000	     30978 ns/op
+BenchmarkQuickSort_10e3	    5000	    374315 ns/op
+BenchmarkQuickSort_10e4	     500	   4416405 ns/op
+BenchmarkQuickSort_10e5	      50	  52075651 ns/op
+BenchmarkSelectionSort_10e1	 1000000	      2041 ns/op
+BenchmarkSelectionSort_10e2	   50000	     44921 ns/op
+BenchmarkSelectionSort_10e3	    1000	   2467377 ns/op
+BenchmarkSelectionSort_10e4	      10	 232074519 ns/op
+BenchmarkSelectionSort_10e5	       1	24369768762 ns/op
+BenchmarkShellSort_10e1	 1000000	      2510 ns/op
+BenchmarkShellSort_10e2	   50000	     52350 ns/op
+BenchmarkShellSort_10e3	     500	   3044164 ns/op
+BenchmarkShellSort_10e4	       5	 279392791 ns/op
+BenchmarkShellSort_10e5	       1	27827132497 ns/op
+ok  	github.com/scot0357/sorting	641.120s
