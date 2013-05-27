@@ -1,5 +1,6 @@
 package sorting
 
+
 func left_child(index int) int {
     return (2 * index) + 1
 }
