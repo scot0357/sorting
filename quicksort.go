@@ -16,8 +16,8 @@ func quicksort(s []int32) {
     if len(s) > 1 {
         pivot := get_random_pivot(len(s))
         normalized_index := partition(s, pivot)
-        quicksort(s[0:normalized_index])
-        quicksort(s[normalized_index+1:len(s)])
+        quicksort(s[:normalized_index])
+        quicksort(s[normalized_index+1:])
     } else {
         return
     }

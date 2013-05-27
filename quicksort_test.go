@@ -42,73 +42,23 @@ func TestQuickSort_10e3(t *testing.T) {
 }
 
 func BenchmarkQuickSort_10e1(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 1, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            quicksort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(quicksort, 1, b)
 }
 
 func BenchmarkQuickSort_10e2(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 2, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            quicksort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(quicksort, 2, b)
 }
 
 func BenchmarkQuickSort_10e3(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 3, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            quicksort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(quicksort, 3, b)
 }
 
 func BenchmarkQuickSort_10e4(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 4, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            quicksort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(quicksort, 4, b)
 }
 
 func BenchmarkQuickSort_10e5(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 5, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            quicksort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(quicksort, 5, b)
 }
 
 func TestQuickSort_pivot(t *testing.T) {

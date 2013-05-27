@@ -42,71 +42,21 @@ func TestBubbleSort_10e3(t *testing.T) {
 }
 
 func BenchmarkBubbleSort_10e1(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 1, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            bubblesort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(bubblesort, 1, b)
 }
 
 func BenchmarkBubbleSort_10e2(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 2, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            bubblesort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(bubblesort, 2, b)
 }
 
 func BenchmarkBubbleSort_10e3(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 3, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            bubblesort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(bubblesort, 3, b)
 }
 
 func BenchmarkBubbleSort_10e4(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 4, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            bubblesort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(bubblesort, 4, b)
 }
 
 func BenchmarkBubbleSort_10e5(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 5, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            bubblesort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(bubblesort, 5, b)
 }

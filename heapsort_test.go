@@ -70,71 +70,21 @@ func TestHeapSort_10e3(t *testing.T) {
 }
 
 func BenchmarkHeapSort_10e1(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 1, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            heapsort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(heapsort, 1, b)
 }
 
 func BenchmarkHeapSort_10e2(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 2, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            heapsort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(heapsort, 2, b)
 }
 
 func BenchmarkHeapSort_10e3(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 3, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            heapsort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(heapsort, 3, b)
 }
 
 func BenchmarkHeapSort_10e4(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 4, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            heapsort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(heapsort, 4, b)
 }
 
 func BenchmarkHeapSort_10e5(b *testing.B) {
-    b.StopTimer()
-    var integers []int32
-    for j := 0; j < b.N; j++ {
-        for i:=1; i<4; i++ {
-            filename := fmt.Sprintf(FILENAME_TMPL, 5, i)
-            integers, _ = readFile(filename)
-            b.StartTimer()
-            heapsort(integers)
-            b.StopTimer()
-        }
-    }
+    benchmark_algorithm(heapsort, 5, b)
 }
