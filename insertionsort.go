@@ -1,6 +1,6 @@
 package sorting
 
-func insertionsort(s []int32) []int32 {
+func insertionsort(s []int32) {
     i := 1
     j := 1
     for i=1; i < len(s); i++ {
@@ -12,5 +12,5 @@ func insertionsort(s []int32) []int32 {
             }
         }
     }
-    return s
+    return
 }

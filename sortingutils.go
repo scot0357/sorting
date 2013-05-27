@@ -1,14 +1,20 @@
 package sorting
 
+import (
+    "io/ioutil"
+    "strconv"
+    "strings"
+)
+
+var FILENAME_TMPL string = "arraysize-10e%v-test%v.dat"
+
 func readFile(fname string) (nums []int32, err error) {
     b, err := ioutil.ReadFile(fname)
     if err != nil { return nil, err }
-
     lines := strings.Split(string(b), "\n")
     nums = make([]int32, 0, len(lines))
 
-    for i, l := range lines {
-        // Empty line occurs at the end of the file when we use Split.
+    for _, l := range lines {
         if len(l) == 0 { continue }
         n, err := strconv.Atoi(l)
         

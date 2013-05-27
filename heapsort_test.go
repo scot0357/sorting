@@ -1,47 +1,75 @@
 package sorting
 
-import (
+import(
     "fmt"
     "testing"
 )
 
-func TestInsertionSort_10e1(t *testing.T) {
+func TestHeapSort_max_heapify(t *testing.T) {
+    integers := []int32 {2, 4, 3}
+    max_heapify(integers, 0, 0)
+    if integers[0] != 4 {
+        t.Error("root is wrong in heapify")
+    }
+    if integers[1] != 2 {
+        t.Error("left child is wrong in heapify")
+    }
+    if integers[2] != 3 {
+        t.Error("right child is wrong in heapify")
+    }
+}
+
+func TestHeapSort_do_max_heap(t *testing.T) {
+    integers := []int32 {4, 3, 2, 1, 5, 2, 6}
+    do_max_heap(integers)
+    if integers[0] != 6 {
+        t.Error("root is wrong in heapify")
+    }
+    if integers[1] != 5 {
+        t.Error("left child is wrong in heapify")
+    }
+    if integers[2] != 4 {
+        t.Error("right child is wrong in heapify")
+    }
+}
+
+func TestHeapSort_10e1(t *testing.T) {
     var integers []int32
     for i:=1; i<4; i++ {
         filename := fmt.Sprintf(FILENAME_TMPL, 1, i)
         integers, _ = readFile(filename)
-        insertionsort(integers)
+        heapsort(integers)
         if !isSorted(integers) {
-            t.Error("insertionsort fails with an sorted array.")
+            t.Error("heapsort fails with an sorted array.")
         }
     }
 }
 
-func TestInsertionSort_10e2(t *testing.T) {
+func TestHeapSort_10e2(t *testing.T) {
     var integers []int32
     for i:=1; i<4; i++ {
         filename := fmt.Sprintf(FILENAME_TMPL, 2, i)
         integers, _ = readFile(filename)
-        insertionsort(integers)
+        heapsort(integers)
         if !isSorted(integers) {
-            t.Error("insertionsort fails with an sorted array.")
+            t.Error("heapsort fails with an sorted array.")
         }
     }
 }
 
-func TestInsertionSort_10e3(t *testing.T) {
+func TestHeapSort_10e3(t *testing.T) {
     var integers []int32
     for i:=1; i<4; i++ {
         filename := fmt.Sprintf(FILENAME_TMPL, 3, i)
         integers, _ = readFile(filename)
-        insertionsort(integers)
+        heapsort(integers)
         if !isSorted(integers) {
-            t.Error("insertionsort fails with an sorted array.")
+            t.Error("heapsort fails with an sorted array.")
         }
     }
 }
 
-func BenchmarkInsertionSort_10e1(b *testing.B) {
+func BenchmarkHeapSort_10e1(b *testing.B) {
     b.StopTimer()
     var integers []int32
     for j := 0; j < b.N; j++ {
@@ -49,13 +77,13 @@ func BenchmarkInsertionSort_10e1(b *testing.B) {
             filename := fmt.Sprintf(FILENAME_TMPL, 1, i)
             integers, _ = readFile(filename)
             b.StartTimer()
-            insertionsort(integers)
+            heapsort(integers)
             b.StopTimer()
         }
     }
 }
 
-func BenchmarkInsertionSort_10e2(b *testing.B) {
+func BenchmarkHeapSort_10e2(b *testing.B) {
     b.StopTimer()
     var integers []int32
     for j := 0; j < b.N; j++ {
@@ -63,13 +91,13 @@ func BenchmarkInsertionSort_10e2(b *testing.B) {
             filename := fmt.Sprintf(FILENAME_TMPL, 2, i)
             integers, _ = readFile(filename)
             b.StartTimer()
-            insertionsort(integers)
+            heapsort(integers)
             b.StopTimer()
         }
     }
 }
 
-func BenchmarkInsertionSort_10e3(b *testing.B) {
+func BenchmarkHeapSort_10e3(b *testing.B) {
     b.StopTimer()
     var integers []int32
     for j := 0; j < b.N; j++ {
@@ -77,13 +105,13 @@ func BenchmarkInsertionSort_10e3(b *testing.B) {
             filename := fmt.Sprintf(FILENAME_TMPL, 3, i)
             integers, _ = readFile(filename)
             b.StartTimer()
-            insertionsort(integers)
+            heapsort(integers)
             b.StopTimer()
         }
     }
 }
 
-func BenchmarkInsertionSort_10e4(b *testing.B) {
+func BenchmarkHeapSort_10e4(b *testing.B) {
     b.StopTimer()
     var integers []int32
     for j := 0; j < b.N; j++ {
@@ -91,13 +119,13 @@ func BenchmarkInsertionSort_10e4(b *testing.B) {
             filename := fmt.Sprintf(FILENAME_TMPL, 4, i)
             integers, _ = readFile(filename)
             b.StartTimer()
-            insertionsort(integers)
+            heapsort(integers)
             b.StopTimer()
         }
     }
 }
 
-func BenchmarkInsertionSort_10e5(b *testing.B) {
+func BenchmarkHeapSort_10e5(b *testing.B) {
     b.StopTimer()
     var integers []int32
     for j := 0; j < b.N; j++ {
@@ -105,7 +133,7 @@ func BenchmarkInsertionSort_10e5(b *testing.B) {
             filename := fmt.Sprintf(FILENAME_TMPL, 5, i)
             integers, _ = readFile(filename)
             b.StartTimer()
-            insertionsort(integers)
+            heapsort(integers)
             b.StopTimer()
         }
     }
